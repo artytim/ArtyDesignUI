@@ -2,27 +2,18 @@ package com.artytect.android.artysdesignui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    ViewGroup buttonContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonContainer = (ViewGroup) findViewById(R.id.buttonContainer);
-
-    }
-
-    public void clickHandler(View view) {
-
-        Button button = new Button(this);
-        button.setText(R.string.click_me);
-        buttonContainer.addView(button);
+        TextView productText = (TextView) findViewById(R.id.product_name);
+        String productName =
+                String.format(getString(R.string.delicious_pie), "Apple");
+        productText.setText(productName);
     }
 }
